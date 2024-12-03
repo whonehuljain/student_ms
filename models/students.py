@@ -12,9 +12,13 @@ class Student(BaseModel):
 
     class Config:
         populate_by_name = True
+
+class Address_Update(BaseModel):
+    city: Optional[str] = None
+    country: Optional[str] = None
         
 
 class Student_Update(BaseModel):
     name: Optional[str] = None
     age: Optional[int] = None
-    address: Optional[Dict[str, Any]] = None
+    address: Optional[Address_Update] = None
